@@ -265,12 +265,13 @@ def create_new_student():
         assert driver.find_element(By.XPATH, '//h4[contains(text(), "My Students")]').is_displayed()
         if driver.find_element(By.XPATH, f'//h4[contains(., "{locators.full_name}")]').is_displayed():
             print(f'New student is created successfully.')
-            sleep(0.25)
+            sleep(0.5)
             driver.find_element(By.XPATH, '//img[@alt="Image"]').click()
-            sleep(0.25)
+            sleep(1)
 
 
 def view_details_of_student():
+    sleep(0.5)
     driver.find_element(By.LINK_TEXT, 'My WeGoStudy').click()
     sleep(0.25)
     driver.find_element(By.LINK_TEXT, 'Students').click()
